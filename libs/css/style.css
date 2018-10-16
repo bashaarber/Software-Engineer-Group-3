@@ -1,0 +1,145 @@
+/* general configs */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+body{
+	font-family: 'Lato', sans-serif !important;
+	color: #337ab7;
+}
+
+/* particle.js configs */
+canvas{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 120%;
+    z-index: -1;
+}
+
+/* header configs */
+
+.logo{
+	color: white;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.icon-bar{
+	background-color: white;
+}
+
+.navbar-primary {
+	background-color:#337ab7;
+    border:none;
+    color: white;
+    padding: 0 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 10px; 
+    border-bottom-left-radius: 10px;
+}
+
+.navbar-nav>li>a {
+	color: white;
+	font-size:16px;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: transparent;
+    font-size:17px;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+    background-color: #337ace;	
+}
+
+.dropdown-menu{
+	box-shadow:none;
+	font-size: 15px;
+}
+
+.dropdown-menu li a{
+	color: #337ab7;
+}
+
+.dropdown-menu li a:hover{
+	color: #337ab7;
+}
+
+
+@media (max-width: 767px){
+.dropdown-menu li a {
+	color: white;
+	}
+.dropdown-menu li a:hover {
+    background-color: #337ace;
+    color:white;
+	}
+}
+
+/* footer configs */
+footer{
+	background-color: #337ab7;
+	border: 1px solid #337ab7;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	color:white;
+	height: auto;
+}
+
+@media (max-width: 990px) {
+    footer{
+        text-align: center;
+    }
+	.divider{
+		margin-top:50px;
+	}
+}
+
+/* margins */
+
+.margin-10-top{
+	margin-top: 10px;
+}
+
+.margin-20-top{
+	margin-top: 20px;
+}
+
+.margin-40-top{
+	margin-top: 40px;
+}
+
+.margin-60-top{
+	margin-top: 60px;
+}
+
+.margin-80-top{
+	margin-top: 100px;
+}
+
+.margin-100-top{
+	margin-top: 100px;
+}
+
+.margin-150-top{
+	margin-top: 150px;
+}
+
+.margin-200-top{
+	margin-top: 200px;
+}
+
+.margin-500-top{
+	margin-top: 500px;
+}
+
+.margin-700-top{
+	margin-top: 700px;
+}
+
+
+
+
