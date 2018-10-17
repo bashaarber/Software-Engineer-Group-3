@@ -35,8 +35,8 @@
 			<?php
 				else:
 			?>
-					<li><a href="#">Register</a></li>
-					<li><a href="#">Log in</a></li>
+					<li><a href="register.php">Register</a></li>
+					<li><a href="login.php">Log in</a></li>
 
 			<?php
 				endif;

@@ -10,11 +10,16 @@ body{
 
 /* particle.js configs */
 canvas{
+	margin-top:50px;
     position: absolute;
     top:0;
     width: 100%;
-    height: 120%;
+    height: 50%;
     z-index: -1;
+}
+
+#particle-js{
+	width:250px;
 }
 
 /* header configs */
@@ -77,6 +82,24 @@ canvas{
     background-color: #337ace;
     color:white;
 	}
+}
+
+/* inputs and panel */
+
+.input-group{
+	margin: 0 auto;
+}
+
+.input-group .form-control{
+	text-align: center;
+	border: 1px solid lightgrey;
+	font-size:19px;
+}
+.input-group .form-control:last-child{
+	border-radius: 7px;
+}
+.panel{
+	border-color: lightgrey;
 }
 
 /* footer configs */
