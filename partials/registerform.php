@@ -25,6 +25,21 @@
 					<br>
 
 					<div class="input-group">
+						<select name="city" class="form-control" required="true">
+							<option disabled selected> City </option>
+							<option>Prishtine</option>
+							<option>Mitrovice</option>
+							<option>Peje</option>
+							<option>Prizren</option>
+							<option>Ferizaj</option>
+							<option>Gjilan</option>
+							<option>Gjakove</option>
+						</select>
+					</div>
+
+					<br>
+
+					<div class="input-group">
 						<input type="text" name="address" class="form-control"placeholder="Address" required="required"/>
 					</div>
 					

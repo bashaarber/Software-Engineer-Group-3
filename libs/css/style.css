@@ -94,12 +94,19 @@ canvas{
 	text-align: center;
 	border: 1px solid lightgrey;
 	font-size:19px;
+	height: 40px;
 }
 .input-group .form-control:last-child{
 	border-radius: 7px;
 }
 .panel{
 	border-color: lightgrey;
+}
+
+select{
+	text-align:center;
+	text-align-last: center;
+	width: 240px !important;
 }
 
 /* footer configs */
