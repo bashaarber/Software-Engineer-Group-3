@@ -1,7 +1,3 @@
-<?php 
-	@include('server.php');
- ?>
-
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 
@@ -14,29 +10,21 @@
 			<br>
 
 			<div class="panel-body text-center">
-				<form action="" method="POST" class="registerform">
-					<?php  include('errors.php'); ?>	
+				<form action="#" method="POST" class="registerform">
+					
 					<div class="input-group">
-						<input type="text" name="Email" class="form-control" placeholder="Email" required="required" />
+						<input type="text" name="email" class="form-control" placeholder="Email" required="required" />
 					</div>
 
 					<br>
 
 					<div class="input-group">
-						<input type="password" name="Password" class="form-control"placeholder="Password" required="required"/>
+						<input type="password" name="password" class="form-control"placeholder="Password" required="required"/>
 					</div>
-                  
+
 					<br>
 
-					<input type="submit" class="btn btn-primary" name="login_user" value="Submit"/>
-				</form>
-
-				
-				<form action=" " method="post"> 
-					<div class="input-group">
-                    <input style="display: none;" type="text" value="" name="sendEmail" />
-                    <button type="submit"  name="forgotPass">Forgot password?</button>                    
-                    </div>
+					<input type="submit" class="btn btn-primary" value="Submit"/>
 				</form>
 			</div>
 		</div>
