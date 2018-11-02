@@ -1,9 +1,4 @@
-<style>
-	.form-control{
-		height: 40px;
-	}
-
-</style>
+<?php @include('server.php') ?>
 
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
@@ -17,8 +12,8 @@
 			<br>
 
 			<div class="panel-body text-center">
-				<form action="#" method="POST" class="registerform">
-						
+				<form action="" method="POST" class="registerform">
+					<?php  include('errors.php'); ?>	
 					<div class="input-group">
 						<input type="text" name="name" class="form-control" placeholder="Name" required="required"/>
 					</div>
@@ -30,12 +25,12 @@
 					</div>
 
 					<br>
-
 					<div class="input-group">
 						<select name="city" class="form-control" required="true">
 							<option disabled selected> City </option>
 							<option>Prishtine</option>
 							<option>Mitrovice</option>
+							<option>Vushtrri</option>
 							<option>Peje</option>
 							<option>Prizren</option>
 							<option>Ferizaj</option>
@@ -65,12 +60,12 @@
 					<br>
 
 					<div class="input-group">
-						<input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" required="required"/>
+						<input type="password" name="confirmPassword" class="form-control" placeholder="Confirm Password" required="required"/>
 					</div>
 
 					<br>
 
-					<input type="submit" class="btn btn-primary" value="Submit"/>
+					<input type="submit" class="btn btn-primary" name="register_user" value="Submit"/>
 				</form>
 			</div>
 		<div class="panel-footer text-center text-danger"> All fields are required*</div>
