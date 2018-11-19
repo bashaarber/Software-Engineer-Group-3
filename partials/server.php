@@ -20,7 +20,7 @@ if(isset($_POST['register_user'])){
     $password_1 = mysqli_real_escape_string($db, $_POST['password']);
     $password_2 = mysqli_real_escape_string($db, $_POST['confirmPassword']);
 
-     if (empty($name)) { array_push($errors, "Username is required"); }
+    if (empty($name)) { array_push($errors, "Username is required"); }
     if (empty($surname)) { array_push($errors, "Surname is required"); }
     if (empty($address)) { array_push($errors, "Address is required"); }
     if (empty($email)) { array_push($errors, "Email is required"); }
@@ -45,9 +45,7 @@ if(isset($_POST['register_user'])){
     $query = "INSERT INTO users (name, surname, address, email, password) 
           VALUES('$name', '$surname', '$address', '$email', '$password')";
     mysqli_query($db, $query);
-    $_SESSION['email'] = $email;
-    $_SESSION['success'] = "You are now logged in";
-    header("Location:index.php");
+    header("Location:login.php");
     exit();
   }
 
@@ -72,7 +70,9 @@ if (isset($_POST['login_user'])) {
   	$query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
+      $id = mysqli_fetch_assoc($results)['id'];
   	  $_SESSION['email'] = $email;
+      $_SESSION['id'] = $id;
   	  $_SESSION['success'] = "You are now logged in";echo "string";
   	  header('location: index.php');
   	}else {

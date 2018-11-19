@@ -1,3 +1,6 @@
+<?php 
+	include'partials/server.php';
+ ?>
 <html>
 	<head>
 		<title> Add a book </title>

@@ -1,3 +1,6 @@
+<?php 
+	include'partials/server.php';
+ ?>
 <html>
 	<head>
 		<title> Add a book </title>
@@ -24,7 +27,13 @@
 				include 'partials/header.php';
 			?>
 			
-			<div class="margin-700-top"></div>
+			<div class="margin-100-top"></div>
+
+			<?php
+				include 'partials/addbookform.php';
+			?>
+
+			<div class="margin-100-top"></div>
 
 			<?php 
 				include 'partials/footer.php';

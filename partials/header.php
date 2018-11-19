@@ -19,9 +19,9 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav navbar-right">
 		  	<?php 	if (isset($_SESSION['success'])) {
-
+		  			
 			?>
-			<li><a href="#"> Add a book <span class="sr-only">(current)</span></a></li>
+			<li><a href="addbook.php"> Add a book <span class="sr-only">(current)</span></a></li>
 			
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> My account <span class="caret"></span></a>
@@ -29,7 +29,7 @@
 				<li><a href="#">My books</a></li>
 				<li><a href="#">Manage account</a></li>
 				<li class="divider"></li>
-				<li><a href="<?php session_destroy(); ?>">Sign out</a></li>
+				<li><a href="index.php?logout">Sign out</a></li>
 			  </ul>
 			</li>
 			<?php
