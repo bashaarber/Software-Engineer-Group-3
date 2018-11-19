@@ -21,12 +21,19 @@
 		  	<?php 	if (isset($_SESSION['success'])) {
 		  			
 			?>
-			<li><a href="addbook.php"> Add a book <span class="sr-only">(current)</span></a></li>
+
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Books <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a href="mybooks.php">My books</a></li>
+				<li class="divider"></li>
+				<li><a href="addbook.php">Add a book</a></li>
+			  </ul>
+			</li>
 			
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> My account <span class="caret"></span></a>
 			  <ul class="dropdown-menu">
-				<li><a href="#">My books</a></li>
 				<li><a href="#">Manage account</a></li>
 				<li class="divider"></li>
 				<li><a href="index.php?logout">Sign out</a></li>

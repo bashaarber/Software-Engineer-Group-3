@@ -17,7 +17,7 @@
 	if($ispublish == 'on'){
 		$ispublish = 1;
 	}
-	if($ispublish == 'off')
+	else if(!isset($ispublish))
 	{
 		$ispublish = 0;
 	}
@@ -57,13 +57,13 @@
 	    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 	        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
 
-	        $query = "INSERT INTO book(Authors,Title,isbn,IsRented,Id_User,img_link,IsPublished) VALUES ('${authors}', '${title}','${isbn}', '${isRented}','${id_user}','${imgName}','${ispublish}')";
+	        $query = "INSERT INTO book(Authors,Title,isbn,IsRented,Id_User,img_link,IsPublished) VALUES ('${authors}', '${title}','${isbn}', ${isRented},${id_user},'${imgName}',${ispublish})";
 	        var_dump($query);
 
 	       $result = mysqli_query($conn,$query);
 
 	       if ($result) {
-					header('Location:../index.php');
+					header('Location: ../mybooks.php');
 			}else {
 				echo mysqli_error($conn);
 			}

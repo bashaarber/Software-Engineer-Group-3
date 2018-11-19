@@ -41,7 +41,7 @@
 					<br>
 
 					<div >
-						<input type="checkbox" name="isPublish"  />&nbsp;Publish
+						<input type="checkbox" name="isPublish"/>&nbsp;Publish
 					</div>
 
 					<br>

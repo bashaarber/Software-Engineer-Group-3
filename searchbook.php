@@ -3,18 +3,11 @@
 
 	$connection = new mysqli('localhost','root','','books');
 
-	if(isset($_GET['logout'])){
-		session_destroy();
-		header("Location: index.php");
-		}
-
-	$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id where isPublished = 1";
+	$search = $_GET['search'];
+	$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id where isPublished = 1 AND Title like '%{$search}%' ";
 	$result = $connection->query($query);
 
 ?>
-<style>
-
-</style>
 
 <html>
 	<head>
