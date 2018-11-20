@@ -14,6 +14,7 @@
 		$address = $row['address'];
 		$email = $row['email'];
 		$password = $row['password'];
+		$city = $row['city'];
 	}
 
 
@@ -46,7 +47,7 @@
 
 					<br>
 					<div class="input-group">
-						<input type="text" name="city" class="form-control" value="" disabled>
+						<input type="text" name="city" class="form-control" value="<?= $city?>" disabled>
 					</div>
 
 					<br>
@@ -63,11 +64,6 @@
 
 					<br>
 
-					<div class="input-group">
-						<input type="password" name="password" class="form-control" value="hahaha" disabled />
-					</div>
-
-					<br>
 
 					<input type="submit" class="btn btn-primary" name="changeAddCity" value="Change City & Address"/>
 					<input type="submit" class="btn btn-primary" name="changePass" value="Change Password"/>
