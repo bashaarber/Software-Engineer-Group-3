@@ -32,6 +32,7 @@ if(isset($_POST['register_user'])){
     array_push($errors, "The two passwords do not match");
   }
 
+  echo $city == 'City';
 
   $user_check_query = "SELECT * FROM users WHERE email='$email'";
   $result = mysqli_query($db, $user_check_query);
