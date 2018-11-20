@@ -17,8 +17,6 @@
 		$city = $row['city'];
 	}
 
-
-
 ?>
 
 <div class="row">
@@ -36,24 +34,24 @@
 				<form action="" method="POST" class="Manageaccount">
 					<?php  include('errors.php'); ?>	
 					<div class="input-group">
-						<input type="text" name="name" class="form-control" value="<?= $name?>" disabled />
+						<input type="text" name="name" class="form-control" value="<?= ucfirst($name)?>" disabled />
 					</div>
 
 					<br>
 
 					<div class="input-group">
-						<input type="text" name="surname" class="form-control" value="<?= $surname?>" disabled />
+						<input type="text" name="surname" class="form-control" value="<?= ucfirst($surname)?>" disabled />
 					</div>
 
 					<br>
 					<div class="input-group">
-						<input type="text" name="city" class="form-control" value="<?= $city?>" disabled>
+						<input type="text" name="city" class="form-control" value="<?= ucfirst($city)?>" disabled>
 					</div>
 
 					<br>
 
 					<div class="input-group">
-						<input type="text" name="address" class="form-control" value="<?= $address?>" disabled />
+						<input type="text" name="address" class="form-control" value="<?= ucfirst($address)?>" disabled />
 					</div>
 					
 					<br>
@@ -64,12 +62,10 @@
 
 					<br>
 
-
-					<input type="submit" class="btn btn-primary" name="changeAddCity" value="Change City & Address"/>
-					<input type="submit" class="btn btn-primary" name="changePass" value="Change Password"/>
 				</form>
+				<button type="submit" class="btn btn-primary" name="changeAddCity" onclick="location.href='changeaddress.php'">Change Address</button>
+				<button type="submit" class="btn btn-primary" name="changePass" onclick="location.href='changepassword.php'"/>Change Password</button>
 			</div>
-		<div class="panel-footer text-center text-danger"> All fields are required*</div>
 		</div>
 	</div>
 </div>

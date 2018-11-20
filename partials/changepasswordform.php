@@ -1,4 +1,10 @@
-<?php @include('server.php') ?>
+<?php 
+
+	$connection = new mysqli("localhost", "root", "", "books");
+	$id_user = $_SESSION['id'];
+	
+	include 'changepasswordvalidation.php';
+ ?>
 
 
 <div class="row">
@@ -7,24 +13,24 @@
 		<div class="panel panel-primary animated fadeIn delay-1s">
 
 			<div class="panel-heading text-center">
-				<h2> Change City & Address </h2>
+				<h2> Change Password </h2>
 			</div>
 
 			<br>
 
 			<div class="panel-body text-center">
-				<form action="" method="POST" class="Manageaccount">
+				<form action="#" method="POST" class="Manageaccount">
 					<?php  include('errors.php'); ?>	
 					
 					<div class="input-group">
-						<input type="password" name="oldpassword" class="form-control"placeholder="Old Password" required="required"/>
+						<input type="password" name="oldPassword" class="form-control"placeholder="Old Password" required="required"/>
 					</div>
 
 					<br>
 
 
 					<div class="input-group">
-						<input type="password" name="newpassword" class="form-control"placeholder="New Password" required="required"/>
+						<input type="password" name="newPassword" class="form-control"placeholder="New Password" required="required"/>
 					</div>
 
 					<br>
@@ -35,8 +41,6 @@
 
 					<br>
 
-
-					<input type="submit" class="btn btn-primary" name="back" value="Back"/>
 					<input type="submit" class="btn btn-primary" name="submit" value="Submit"/>
 				</form>
 			</div>
