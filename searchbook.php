@@ -5,8 +5,7 @@
 
 	$search = $_GET['search'];
 	$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id where isPublished = 1 AND Title like '%{$search}%' ";
-	$result = $connection->query($query);
-
+	$result = $connection->query($query); 
 ?>
 
 <html>
@@ -20,21 +19,16 @@
   		<link rel="stylesheet" href="libs/css/style.css">
 		<link rel="stylesheet" href="libs/css/animate.css">
 		<link rel="icon" href="images/book.ico">
-  		<script src="libs/particles/particles.js"></script>
-  		<script>
-  			particlesJS.load('particles-js', 'libs/particles/demo/particles.json');
-	  	</script>
 	</head>	
 	<body>
   	
-  		<div id="particles-js"></div>
+		
+		<?php 
+			include 'partials/header.php';
+		?>
 
 		<div class="container">
-		
-			<?php 
-				include 'partials/header.php';
-			?>
-			
+
 			<div class="margin-100-top"></div>
 			
 			<div class="row animated fadeInDown delay-1s">
@@ -72,19 +66,23 @@
 					<div class="text-center" style="font-size: 18px;"> - <?= $author ?> </div>
 				</div>
 
-
-				<?php } ?>
+				<?php 
+			} ?>
 				</div>
 
-				<div class="margin-60-top">
-
-
-
-			<?php 
-				include 'partials/footer.php';
-			?>
+				<?php if($result->num_rows == 0){?>
+					<div class="margin-500-top"></div>
+				<?php }else{ ?>
+					<div class="margin-80-top"></div>
+				<?php } ?>
 
 		</div>
+
+
+		<?php 
+			include 'partials/footer.php';
+		?>
+
 
 		
 	</body>

@@ -42,11 +42,15 @@ canvas{
 	background-color:#337ab7;
     border:none;
     color: white;
-    padding: 0 10px;
-    border-top-right-radius: 0px;
+    padding: 1px 20px;
+   /* border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 10px; 
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px; */
+}
+
+.navbar {
+    border-radius: 0px;
 }
 
 .navbar-nav>li>a {
@@ -116,8 +120,8 @@ select{
 footer{
 	background-color: #337ab7;
 	border: 1px solid #337ab7;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+	/*border-top-left-radius: 10px;
+	border-top-right-radius: 10px;*/
 	color:white;
 	height: auto;
 }

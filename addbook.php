@@ -12,20 +12,17 @@
   		<link rel="stylesheet" href="libs/css/style.css">
 		<link rel="stylesheet" href="libs/css/animate.css">
 		<link rel="icon" href="images/book.ico">
-  		<script src="libs/particles/particles.js"></script>
-  		<script>
-  			particlesJS.load('particles-js', 'libs/particles/demo/particles.json');
-	  	</script>
+
 	</head>	
 	<body>
   	
-  		<div id="particles-js"></div>
+		
+		<?php 
+			include 'partials/header.php';
+		?>
 
 		<div class="container">
-		
-			<?php 
-				include 'partials/header.php';
-			?>
+
 			
 			<div class="margin-100-top"></div>
 
@@ -35,11 +32,13 @@
 
 			<div class="margin-100-top"></div>
 
+		</div>
+			
+
 			<?php 
 				include 'partials/footer.php';
 			?>
 
-		</div>
 
 		
 	</body>
