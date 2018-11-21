@@ -31,38 +31,35 @@
 			<br>
 
 			<div class="panel-body text-center">
-				<form action="" method="POST" class="Manageaccount">
-					<?php  include('errors.php'); ?>	
-					<div class="input-group">
-						<input type="text" name="name" class="form-control" value="<?= ucfirst($name)?>" disabled />
-					</div>
-
-					<br>
-
-					<div class="input-group">
-						<input type="text" name="surname" class="form-control" value="<?= ucfirst($surname)?>" disabled />
-					</div>
-
-					<br>
-					<div class="input-group">
-						<input type="text" name="city" class="form-control" value="<?= ucfirst($city)?>" disabled>
-					</div>
-
-					<br>
-
-					<div class="input-group">
-						<input type="text" name="address" class="form-control" value="<?= ucfirst($address)?>" disabled />
-					</div>
+				<div class="table-responsive">
+				  <table class="table table-bordered text-center">
+				  	<tr>
+				  		<th class="text-center">Name</th>
+				  		<td><?= $name?></td>
+				  	</tr>
+				  	
+				  	<tr>
+				  		<th class="text-center">Surname</th>
+				  		<td><?= $surname?></td>
+				  	</tr>
+				  	
+				  	<tr>
+				  		<th class="text-center">City</th>
+				  		<td><?= $city?></td>
+				  	</tr>
+				  	
+				  	<tr>
+				  		<th class="text-center">Address</th>
+				  		<td><?= $address?></td>
+				  	</tr>
 					
-					<br>
+					<tr>
+				  		<th class="text-center">Email</th>
+				  		<td><?= $email?></td>
+				  	</tr>
 
-					<div class="input-group">
-						<input type="email" name="email" class="form-control" value="<?= $email ?>" disabled/>
-					</div>
-
-					<br>
-
-				</form>
+				  </table>
+				</div>
 				<button type="submit" class="btn btn-primary" name="changeAddCity" onclick="location.href='changeaddress.php'">Change Address</button>
 				<button type="submit" class="btn btn-primary" name="changePass" onclick="location.href='changepassword.php'"/>Change Password</button>
 			</div>
