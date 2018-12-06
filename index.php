@@ -2,15 +2,17 @@
 	session_start();
 
 	$connection = new mysqli('localhost','root','','books');
-	$id_user = $_SESSION['id'];
+	
 
 	if(isset($_GET['logout'])){
 		session_destroy();
 		header("Location: index.php");
 		}
 
-	if(isset($_SESSION['id']))
+	if(isset($_SESSION['id'])){
+		$id_user = $_SESSION['id'];
 		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id where isPublished = 1 AND id_user <> $id_user";
+	}
 	else
 		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id where isPublished = 1";
 	$result = $connection->query($query);
