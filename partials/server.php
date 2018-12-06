@@ -10,6 +10,7 @@ $errors = array();
 
 $db = mysqli_connect('localhost','root','','books');
 
+
 if(isset($_POST['register_user'])){
 
 

@@ -1,6 +1,8 @@
 <?php
 
  @include('server.php');
+
+
 ?>
 
 <nav class="navbar navbar-primary">

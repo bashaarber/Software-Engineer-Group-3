@@ -2,13 +2,17 @@
 	session_start();
 
 	$connection = new mysqli('localhost','root','','books');
+	$id_user = $_SESSION['id'];
 
 	if(isset($_GET['logout'])){
 		session_destroy();
 		header("Location: index.php");
 		}
 
-	$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id where isPublished = 1";
+	if(isset($_SESSION['id']))
+		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id where isPublished = 1 AND id_user <> $id_user";
+	else
+		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id where isPublished = 1";
 	$result = $connection->query($query);
 
 ?>
@@ -45,7 +49,7 @@
 				    <div class="input-group">
 				      <input id="searchInput" name="search" type="text" class="form-control" placeholder="Search a book by name...">
 				      <span class="input-group-btn">
-				        <input type="submit" class="btn btn-primary" type="button"/> &nbsp;
+				        <input type="submit" class="btn btn-primary" value="Submit"/> &nbsp;
 				      </span>
 				    </div>
 				</form>
