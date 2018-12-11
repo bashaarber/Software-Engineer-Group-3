@@ -64,6 +64,7 @@
 						$isPublished = $row['IsPublished'];
 						$imgPath = $row['img_link'];
 						$status = $row['status'];
+						$id_borrower = $row['id_borrower'];
 				?>
 
 				<div class="col-md-3 col-sm-6 animated fadeIn delay-1s text-center" style="margin-bottom: 40px;">
@@ -75,13 +76,14 @@
 					<br>
 
 					<?php
-						if($status == 'REQUEST'){?>
-							<div><button class="btn btn-primary" disabled>Pending</button></div>
-					<?php	
-						}else{
+						if(isset($_SESSION['id'])){
+						if($id_borrower == $id_user){?>
+							<div><button class="btn btn-primary" disabled> <?= $status ?> </button></div>
+						<?php }	else{
 					?>
 					<div><a href="requestbook.php?id_book=<?=$id_book?>" class="btn btn-primary">Request</a></div>
-				<?php }?>
+				<?php }
+			}?>
 
 				</div>
 

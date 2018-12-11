@@ -12,7 +12,7 @@
 
 	$id_borrower = $_SESSION['id'];
 
-	$status = "REQUEST";
+	$status = "REQUESTED";
 
 	if(isset($_POST['return_date'])){
 
@@ -35,8 +35,6 @@
 			echo mysqli_error($connection);
 
 		}else{
-			$isRequestedQuery = "UPDATE book SET isRequested = 1 WHERE Id_Books = $id_book";
-			$connection->query($isRequestedQuery);
 			header('Location:../index.php');
 		}
 	}

@@ -2,7 +2,6 @@
 
  @include('server.php');
 
-
 ?>
 
 <nav class="navbar navbar-primary">
@@ -28,6 +27,7 @@
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Books <span class="caret"></span></a>
 			  <ul class="dropdown-menu">
 				<li><a href="mybooks.php">My books</a></li>
+				<li><a href="requests.php">My requests <?= $requests ?></a></li>
 				<li class="divider"></li>
 				<li><a href="addbook.php">Add a book</a></li>
 			  </ul>

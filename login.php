@@ -1,5 +1,5 @@
 <?php 
-	include'partials/server.php';
+	include 'partials/server.php';
  ?>
 <html>
 	<head>
