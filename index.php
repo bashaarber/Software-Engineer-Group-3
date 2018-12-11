@@ -11,10 +11,11 @@
 
 	if(isset($_SESSION['id'])){
 		$id_user = $_SESSION['id'];
-		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id where isPublished = 1 AND id_user <> $id_user";
+		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book where isPublished = 1 AND id_user <> $id_user";
 	}
 	else
-		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id where isPublished = 1";
+		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book where isPublished = 1";
+
 	$result = $connection->query($query);
 
 ?>
@@ -71,6 +72,7 @@
 						$isRented = $row['IsRented'];
 						$isPublished = $row['IsPublished'];
 						$imgPath = $row['img_link'];
+						$status = $row['status'];
 				?>
 
 				<div class="col-md-3 col-sm-6 animated fadeIn delay-1s text-center" style="margin-bottom: 40px;">
@@ -78,7 +80,17 @@
 					<img src="uploads/<?=$imgPath?>" width = "250" height = "350"/>
 					<div class="text-center" style="font-size: 20px;"> "<?= $title ?>" </div>
 					<div class="text-center" style="font-size: 18px;"> - <?= $author ?> </div>
+
+					<br>
+
+					<?php
+						if($status == 'REQUEST'){?>
+							<div><button class="btn btn-primary" disabled>Pending</button></div>
+					<?php	
+						}else{
+					?>
 					<div><a href="requestbook.php?id_book=<?=$id_book?>" class="btn btn-primary">Request</a></div>
+				<?php }?>
 				</div>
 
 

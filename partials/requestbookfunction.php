@@ -27,12 +27,16 @@
 		$insertQuery = "INSERT INTO rents(id_book,id_owner,id_borrower,return_date,status) VALUES ($id_book , $id_owner, $id_borrower, '$insert_date','$status')"; 
 
 
+
+
 		$insertResult = $connection->query($insertQuery);
 
 		if(!$insertResult){
 			echo mysqli_error($connection);
 
 		}else{
+			$isRequestedQuery = "UPDATE book SET isRequested = 1 WHERE Id_Books = $id_book";
+			$connection->query($isRequestedQuery);
 			header('Location:../index.php');
 		}
 	}
