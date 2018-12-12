@@ -72,8 +72,10 @@
 						$isRented = $row['IsRented'];
 						$isPublished = $row['IsPublished'];
 						$imgPath = $row['img_link'];
-						$status = $row['status'];
-						$id_borrower = $row['id_borrower'];
+						if(isset($id_user)){
+							$status = $row['status'];
+							$id_borrower = $row['id_borrower'];
+					}
 				?>
 
 				<div class="col-md-4 col-sm-6 animated fadeIn delay-1s text-center" style="margin-bottom: 40px;">
