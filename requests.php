@@ -42,18 +42,20 @@
 			<h2 class="h2 text-center"> Book borrow requests </h2> 
 			
 			<table class="table table-responsive table-bordered table-hover margin-50-top">
-				<th>
-					Book
-				</th>
-				<th>
-					Requester
-				</th>
-				<th>
-					Return Date
-				</th>
-				<th>
-					Actions
-				</th>
+				<tr>
+					<th class="text-center">
+						Book
+					</th>
+					<th class="text-center">
+						Requester
+					</th>
+					<th class="text-center">
+						Return Date
+					</th>
+					<th class="text-center">
+						Actions
+					</th>
+				</tr>
 
 				<?php while($row = $result->fetch_assoc()){
 					$id_book = $row['Id_Books'];
@@ -76,7 +78,7 @@
 
 					?>
 
-				<tr>
+				<tr class="text-center">
 					<td>
 						<?= $title ?>
 					</td>
@@ -90,7 +92,7 @@
 					</td>
 
 					<td>
-						<a href="partials/acceptrequest.php?id_rent=<?= $id_rent ?>"><span class="glyphicon glyphicon-ok" title="Accept"></span></a>
+						<a href="partials/acceptrequest.php?id_rent=<?= $id_rent ?>&id_book=<?= $id_book?>"><span class="glyphicon glyphicon-ok" title="Accept"></span></a>
 						<a href="partials/denyrequest.php?id_rent=<?= $id_rent ?>"><span class="glyphicon glyphicon-remove" title="Deny"></span></a>
 					</td>
 				</tr>

@@ -11,10 +11,10 @@
 
 	if(isset($_SESSION['id'])){
 		$id_user = $_SESSION['id'];
-		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book where isPublished = 1 AND id_user <> $id_user";
+		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book and r.id_borrower = $id_user  where isPublished = 1  AND id_user <> $id_user";
 	}
 	else
-		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book where isPublished = 1";
+		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id where isPublished = 1";
 
 	$result = $connection->query($query);
 
@@ -77,10 +77,10 @@
 				?>
 
 				<div class="col-md-4 col-sm-6 animated fadeIn delay-1s text-center" style="margin-bottom: 40px;">
-					<div class="text-center" style="font-size:17px;"> Published by: <?=$fullName?> </div>
+					<div class="text-center" style="font-size:17px;"> Published by: <strong> <?=$fullName?> </strong></div>
 					<img src="uploads/<?=$imgPath?>" width = "250" height = "350"/>
 					<div class="text-center" style="font-size: 20px;"> "<?= $title ?>" </div>
-					<div class="text-center" style="font-size: 18px;"> - <?= $author ?> </div>
+					<div class="text-center" style="font-size: 18px;"> <em> - <?= $author ?></em> </div>
 
 					<br>
 

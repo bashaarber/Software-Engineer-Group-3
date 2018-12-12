@@ -72,9 +72,11 @@
 
 			
 
-
-			<div class="margin-100-top"></div>
-
+			<?php if(!$result->num_rows){ ?>
+			<div class="margin-300-top"></div> 
+		<?php }else{?>
+			<div class="margin-50-top"></div>
+		<?php }?>
 		</div>
 
 		<?php 

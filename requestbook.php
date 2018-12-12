@@ -29,21 +29,19 @@
 	</head>	
 	<body>
   	
-		
-			<?php 
-				include 'partials/header.php';
-			?>
+		<?php 
+			include 'partials/header.php';
+		?>
+
+		<h3 class="h3 text-center margin-100-top animated fadeInDown"> Borrow request </h3>
 
 		<div class="container">
 			
-		<div class="row margin-100-top">
+		<div class="row margin-50-top">
 
 			<?php include 'partials/requestbookform.php'; ?>
 
 		</div>
-
-
-				
 
 		<div class="margin-100-top">
 
@@ -54,8 +52,6 @@
 			<?php 
 				include 'partials/footer.php';
 			?>
-
-
 		
 	</body>
 </html>
