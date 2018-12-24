@@ -3,16 +3,30 @@
 					while($row = $result->fetch_assoc()){
 						$id_book = $row['Id_Books'];
 						$fullName = ucwords($row['name']) . ' ' . ucwords($row['surname']);
+						$idUser = $row['Id_User'];
 						$author = $row['Authors'];
 						$title = $row['Title'];
 						$isbn = $row['isbn'];
 						$isRented = $row['IsRented'];
 						$isPublished = $row['IsPublished'];
 						$imgPath = $row['img_link'];
+
+
+						$newQuery = "SELECT * FROM  users WHERE id=$idUser";
+
+
+						$newResult = mysqli_query($connection,$newQuery);
+
+						while($row = $newResult->fetch_assoc()){
+							$address = $row['address'];
+							$city = $row['city'];
+						}
 				?>
 
 				<div class="col-md-6 col-sm-6 animated fadeIn delay-1s text-center" style="margin-bottom: 40px;">
 					<div class="text-center" style="font-size:17px;"> Published by: <?=$fullName?> </div>
+					<div class="text-center" style="font-size:17px;"> Address: <?=$address?> </div>
+					<div class="text-center" style="font-size:17px;"> City: <?=$city?> </div>
 					<img src="uploads/<?=$imgPath?>" width = "250" height = "350"/>
 					<div class="text-center" style="font-size: 20px;"> "<?= $title ?>" </div>
 					<div class="text-center" style="font-size: 18px;"> - <?= $author ?> </div>
