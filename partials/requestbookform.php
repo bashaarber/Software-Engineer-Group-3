@@ -49,7 +49,7 @@
 				<form action="partials/requestbookfunction.php" method="POST" class="registerform" enctype="multipart/form-data">
 					<?php  include('errors.php'); ?>	
 					<div class="input-group">
-						<input type="date" name="return_date" class="form-control" required="required"/>
+						<input type="date" id="txtDate" name="return_date" class="form-control" required="required"/>
 					</div>
 					
 					<br>
@@ -61,3 +61,24 @@
 		<div class="panel-footer text-center text-danger"> You need to choose a date*</div>
 		</div>
 	</div>
+	<script>
+		
+
+    	$(function(){
+		    var dtToday = new Date();
+		    
+		    var month = dtToday.getMonth() + 1;
+		    var day = dtToday.getDate();
+		    var year = dtToday.getFullYear();
+		    if(month < 10)
+		        month = '0' + month.toString();
+		    if(day < 10)
+		        day = '0' + day.toString();
+		    
+		    var maxDate = year + '-' + month + '-' + day;
+		    $('#txtDate').attr('min', maxDate);
+		});
+
+		var maxDate = year + '-' + month + '-' + day;
+    	$('#txtDate').attr('min', maxDate);
+	</script>
