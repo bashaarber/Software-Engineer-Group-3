@@ -37,11 +37,11 @@
 
 			<div class="margin-100-top"></div>
 			
-			<div class="row animated fadeInDown delay-1s">
-			  <div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+			<div class="row animated fadeInDown delay-1s center-block" style="width:80%;">
+			<div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
 			  	<form method="GET" action="searchbook.php">
 				    <div class="input-group">
-				      <input id="searchInput" name="search" type="text" class="form-control" placeholder="Search a book by name...">
+				      <input id="searchInput" name="search" type="text" class="form-control" placeholder="Search a book...">
 				      <span class="input-group-btn">
 				        <input type="submit" class="btn btn-primary" value="Submit"/> &nbsp;
 				      </span>
