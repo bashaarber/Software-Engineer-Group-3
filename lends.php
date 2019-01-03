@@ -8,7 +8,7 @@
 	}else{
 		$id_user = $_SESSION['id'];
 
-		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book where r.id_owner = $id_user AND (status = 'ACCEPTED' OR status = 'RETURNED')";
+		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book where r.id_owner = $id_user AND (status = 'ACCEPTED' OR status = 'RETURNED' OR status = 'RETURN REQUEST' OR status = 'LOST')";
 
 		$result = $connection->query($query);
 	}
@@ -95,16 +95,24 @@
 					</td>
 
 					<td>
-						<?= $status == 'ACCEPTED' ? 'PENDING' : 'RETURNED' ?>
+						<?= $status ?>
 					</td>
 
 					<td>
 						<?php if($status == 'ACCEPTED'){ ?>
 						<a href="#"><span class="glyphicon glyphicon-alert" title="Report Lost"></span></a>
-					<?php }else{ ?>
-						<a href="#"><span class="glyphicon glyphicon-thumbs-up" title="Returned"></span></a>
 
+					<?php }else if($status == 'RETURN REQUEST'){?>
+						<a href="partials/acceptreturnrequest.php?id=<?= $id_rent ?>"><span class="glyphicon glyphicon-ok" title="Accept Return"></span></a> 
+						&nbsp;
+						<a href="partials/denyreturnrequest.php?id=<?= $id_rent ?>"><span class="glyphicon glyphicon-remove" title="Deny Return"></span></a>
+					<?php }else if($status == "RETURNED"){ ?>
+						<span class="glyphicon glyphicon-thumbs-up" title="Returned"></span>
+
+						<?php }else{ ?>
+							<span class="glyphicon glyphicon-thumbs-down" title="LOST"></span>
 						<?php } ?>
+
 
 					</td>
 				</tr>

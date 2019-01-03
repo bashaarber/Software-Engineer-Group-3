@@ -8,12 +8,13 @@
 	}else{
 		$id_user = $_SESSION['id'];
 
-		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book where r.id_borrower = $id_user AND (status = 'ACCEPTED' or status = 'DENIED')";
+		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book where r.id_borrower = $id_user AND (status = 'ACCEPTED' or status = 'LOST' or status = 'RETURN REQUEST' or status = 'RETURNED')";
 
 		$result = $connection->query($query);
 	}
 
 ?>
+
 <style>
 
 </style>
@@ -36,7 +37,7 @@
 			<?php 
 				include 'partials/header.php';
 			?>
-
+			
 		<div class="container margin-100-top">
 
 			<h2 class="h2 text-center"> Borrowed books </h2> 
@@ -101,9 +102,22 @@
 
 					<td>
 						<?php if($status == 'ACCEPTED'){ ?>
-						<a href="#"><button class="btn btn-primary"> Return </button></a>
-					<?php }else{ ?>
-						<a href="#"><span class="glyphicon glyphicon-thumbs-down" title="Denied"></span></a>
+							<form action="partials/requestreturnbook.php" method="POST">
+								<button class="btn btn-primary"> Return </button>
+								<input type="hidden" name="id_rent" value="<?= $id_rent?>"/>
+							</form>
+
+						<?php }else if($status == 'RETURN REQUEST') {
+						?> 
+								<button class="btn btn-primary" disabled> Request </button>
+							<?php }else if($status == 'RETURNED'){ ?>
+
+						<span class="glyphicon glyphicon-thumbs-up" title="Returned"></span>
+
+					<?php }else{?>
+
+
+						<a href="#"><span class="glyphicon glyphicon-thumbs-down" title="Lost"></span></a>
 
 						<?php } ?>
 
