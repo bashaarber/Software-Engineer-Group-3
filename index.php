@@ -11,7 +11,7 @@
 
 	if(isset($_SESSION['id'])){
 		$id_user = $_SESSION['id'];
-		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book and r.id_borrower = $id_user  where isPublished = 1  AND id_user <> $id_user";
+		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book and r.id_borrower = $id_user where isPublished = 1  AND id_user <> $id_user ";
 	}
 	else
 		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id where isPublished = 1";
