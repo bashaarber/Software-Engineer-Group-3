@@ -15,7 +15,7 @@
 			header("Location: admin.php");
 		}else{
 		$id_user = $_SESSION['id'];
-		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book and r.id_borrower = $id_user where isPublished = 1  AND id_user <> $id_user ";	
+		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book and r.id_borrower = $id_user where isPublished = 1  AND id_user <> $id_user AND (status = 'REQUESTED' OR status = 'DENIED' OR status = 'RETURNED' OR status IS NULL)";	
 		}
 	}
 	else
@@ -80,6 +80,7 @@
 							$status = $row['status'];
 							$id_borrower = $row['id_borrower'];
 					}
+
 				?>
 
 				<div class="col-md-4 col-sm-6 animated fadeIn delay-1s text-center" style="margin-bottom: 40px;">
@@ -92,9 +93,9 @@
 
 					<?php
 						if(isset($_SESSION['id'])){
-						if($id_borrower == $id_user){?>
+						if($id_borrower == $id_user && $status == 'REQUESTED'){?>
 							<div><button class="btn btn-primary" disabled> <?= $status ?> </button></div>
-						<?php }	else{
+						<?php }else if($status == 'DENIED' || $status == 'RETURNED' || $status == null){
 					?>
 					<div><a href="requestbook.php?id_book=<?=$id_book?>" class="btn btn-primary">Request</a></div>
 				<?php }

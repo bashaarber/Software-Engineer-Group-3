@@ -7,7 +7,7 @@
 	$search = $_GET['search'];
 
 	if(isset($_SESSION['id']))
-			$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book and r.id_borrower = $id_user where isPublished = 1 AND Title like '%{$search}%' AND id_user <> $id_user ";
+			$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id left join rents r on b.id_books = r.id_book and r.id_borrower = $id_user where isPublished = 1 AND (status = 'REQUESTED' OR status = 'DENIED' OR status = 'RETURNED' OR status IS NULL) AND Title like '%{$search}%' AND id_user <> $id_user ";
 	else
 		$query = "SELECT * FROM book b inner join users u on b.Id_User = u.id where isPublished = 1 AND Title like '%{$search}%'";
 
@@ -77,9 +77,9 @@
 
 					<?php
 						if(isset($_SESSION['id'])){
-						if($id_borrower == $id_user){?>
+						if($id_borrower == $id_user && $status == 'REQUESTED'){?>
 							<div><button class="btn btn-primary" disabled> <?= $status ?> </button></div>
-						<?php }	else{
+						<?php }	else if($status == 'DENIED' || $status == 'RETURNED' || $status == null){
 					?>
 					<div><a href="requestbook.php?id_book=<?=$id_book?>" class="btn btn-primary">Request</a></div>
 				<?php }

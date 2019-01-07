@@ -54,6 +54,7 @@
 					
 					<br>
 					<input type="hidden" name="id_book" value="<?=$id_book?>">
+					<input type="hidden" name="id_owner" value="<?=$id_owner?>"/>
 					
 					<input type="submit" class="btn btn-primary" name="register_book" value="Request"/>
 				</form>
