@@ -29,7 +29,7 @@
 
 		$searchResult = $connection->query($searchQuery);
 
-		if(count($searchResult) > 0){
+		if($searchResult->num_rows > 0){
 			$connection->query("UPDATE rents set status = 'REQUESTED' where id_book = $id_book and id_borrower = $id_borrower and id_owner = $id_owner");
 
 			header('Location:../index.php');
